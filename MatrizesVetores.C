@@ -1,4 +1,5 @@
 #include <stdio.h>   
+#include <string.h>
 
 
 
@@ -39,35 +40,55 @@ for ( l=0; l<3; l++ ){
 }
 
 
+
 printf("\n\n******************* Matriz composta ordenada ********************* \n\n");
 
  
-int i, Vet[12];        // intenção de passar matriz pra vetor
-
-for (i=0; i< 12; i++){
-    for ( l=0; l<3; l++ ){
-      for ( c=7; c<2; c++ ){  
-      printf (" | %d |", Vet[i] );
+int i=0, j=6, k ,  vet[12];        
+ 
+for ( l=0; l<3; l++ ){             // passagem de matriz pra vetor 
+    for ( c=0; c<2; c++ ){  
+        vet[i] = mat1[l][c];
+        vet[j] = mat2[l][c];
+        i++, j++;
     }
-  } 
-    
 }
-
-
-printf(" %d " , Vet);  // coloquei isso so pra acompanhar a passagem de matriz pra vetor 
-                        // mas tambem não esta rodando certo
-
-
-
-// preciso alimentar a matriz com vetor
-for (i=0; i< 12; i++){
-    for ( l=0; l<3; l++ ){              // laço de repetição da linha
-        for ( c=0; c<4; c++ ){          // laço de repetição da coluna
-        printf ("Elemento [%d][%d] =", l, c);
-             ("%d", &matT[l] [c] );   // aqui eu acredito que tenho que colocar um  SET ou algo que de update na matriz com vetor
+/*
+for (k=0 ; k<j; k++){               //print vetor ordenado
+    printf (" ( %d )",vet[k]);
+}
+*/
+for (i=0; i<12; i++){
+    for (j=i; j<12; j++){
+        if (vet[i]>vet[j]){         //ordenação vetor
+              k     =vet[i];
+            vet[i]  =vet[j];
+            vet[j]  =k;
         }
-   }
+    }
 }
 
+/*
+for (i=0; i<12; i++){
+    printf("\nNumero  %d  =  %d \n",i,vet[i]);
+}
+*/
+int count = 0;
+for ( l=0; l<3; l++ ){             // passagem de vetor para matriz
+    for ( c=0; c<4; c++ ){  
+        matT[l][c] = vet[count];
+        count++;
+    }
+}
+
+for ( l=0; l<3; l++ ){
+    for ( c=0; c<4; c++ ){  
+        printf (" | %d |", matT[l][c] );
+    }
+    printf ("\n" ); // mostra matriz total
+}
+
+
+system("pause");
 return 0;
 }
