@@ -42,7 +42,7 @@ for ( l=0; l<3; l++ ){
 printf("\n\n******************* Matriz composta ordenada ********************* \n\n");
 
  
-int i, Vet[12];
+int i, Vet[12];        // intenção de passar matriz pra vetor
 
 for (i=0; i< 12; i++){
     for ( l=0; l<3; l++ ){
@@ -54,7 +54,17 @@ for (i=0; i< 12; i++){
 }
 
 
-printf(" %d " , Vet);
+printf(" %d " , Vet);  // coloquei isso so pra acompanhar a passagem de matriz pra vetor 
+                        // mas tambem não esta rodando certo
+
+
+
+printf ("\nDigite os numeros para os elementos da matriz total: \n\n"); // preciso alimentar a matriz com vetor
+for ( l=0; l<3; l++ ){              // laço de repetição da linha
+    for ( c=0; c<4; c++ ){          // laço de repetição da coluna
+        printf ("Elemento [%d][%d] =", l, c);
+        scanf ("%d", &matT[l] [c] );
+    }
 
 
 return 0;
