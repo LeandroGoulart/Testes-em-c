@@ -59,14 +59,15 @@ printf(" %d " , Vet);  // coloquei isso so pra acompanhar a passagem de matriz p
 
 
 
-printf ("\nDigite os numeros para os elementos da matriz total: \n\n"); // preciso alimentar a matriz com vetor
+// preciso alimentar a matriz com vetor
 for (i=0; i< 12; i++){
     for ( l=0; l<3; l++ ){              // laço de repetição da linha
         for ( c=0; c<4; c++ ){          // laço de repetição da coluna
         printf ("Elemento [%d][%d] =", l, c);
-        scanf ("%d", &matT[l] [c] );
+             ("%d", &matT[l] [c] );   // aqui eu acredito que tenho que colocar um  SET ou algo que de update na matriz com vetor
         }
    }
 }
+
 return 0;
 }
