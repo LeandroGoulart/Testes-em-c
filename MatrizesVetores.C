@@ -40,55 +40,24 @@ for ( l=0; l<3; l++ ){
 }
 
 
-
 printf("\n\n******************* Matriz composta ordenada ********************* \n\n");
 
  
-int i=0, j=6, k ,  vet[12];        
- 
-for ( l=0; l<3; l++ ){             // passagem de matriz pra vetor 
-    for ( c=0; c<2; c++ ){  
-        vet[i] = mat1[l][c];
-        vet[j] = mat2[l][c];
-        i++, j++;
-    }
-}
-/*
-for (k=0 ; k<j; k++){               //print vetor ordenado
-    printf (" ( %d )",vet[k]);
-}
-*/
-for (i=0; i<12; i++){
-    for (j=i; j<12; j++){
-        if (vet[i]>vet[j]){         //ordenação vetor
-              k     =vet[i];
-            vet[i]  =vet[j];
-            vet[j]  =k;
-        }
-    }
-}
+int i, Vet[12];        // intenção de passar matriz pra vetor
 
-/*
-for (i=0; i<12; i++){
-    printf("\nNumero  %d  =  %d \n",i,vet[i]);
-}
-*/
-int count = 0;
-for ( l=0; l<3; l++ ){             // passagem de vetor para matriz
-    for ( c=0; c<4; c++ ){  
-        matT[l][c] = vet[count];
-        count++;
-    }
-}
 
 for ( l=0; l<3; l++ ){
-    for ( c=0; c<4; c++ ){  
-        printf (" | %d |", matT[l][c] );
+    for ( c=7; c<2; c++ ){ 
+    Vet[i]  = mat1[l][c];
+    Vet[i+5]= mat2[l][c];
+    printf(" %d " , Vet);
+    i++;
     }
-    printf ("\n" ); // mostra matriz total
-}
+} 
+    
 
 
-system("pause");
+  // coloquei isso so pra acompanhar a passagem de matriz pra vetor 
+                        // mas tambem não esta rodando certo
 return 0;
 }
