@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <locale.h>
 #include <windows.h>
- #define LIMPA_TELA system("cls")
+#define LIMPA_TELA system("cls")
 
 //Espera 3 segundos
 #define ESPERA sleep(2)
@@ -28,11 +28,11 @@ setlocale(LC_ALL, ""); // ajuste do idioma
  do {
  //Limpando a tela, e mostrando o menu
  LIMPA_TELA;
- printf("\nMétodo Fila\n\n");
- printf("Escolha uma opção: \n");
+ printf("\nMetodo Fila\n\n");
+ printf("Escolha uma opcao: \n");
  printf("\t1 - Inserir valor na Fila\n");
  printf("\t2 - Remover valor da Fila\n");
- printf("\t3 - Mostrar valores da Fila\n)";
+ printf("\t3 - Mostrar valores da Fila\n");
  printf("\t9 - Sair\n\n");
  printf("Resposta: ");
  scanf("%c", &escolha);
@@ -47,7 +47,7 @@ setlocale(LC_ALL, ""); // ajuste do idioma
  exclui();
  }
  else{
- printf("\nA Fila está vazia!\n");
+ printf("\nA Fila esta vazia!\n");
  getchar();
  }
  break;
@@ -57,13 +57,13 @@ setlocale(LC_ALL, ""); // ajuste do idioma
  mostra();
  }
  else{
- printf("\nA Fila está vazia!\n");
+ printf("\nA Fila esta vazia!\n");
  getchar();
  }
  break;
  case '9':
  printf("\nObrigado por utilizar esse programa!\n");
- printf("------>Terminal de Informação<------\n\n");
+ printf("------>Terminal de Informacao<------\n\n");
  ESPERA;
  exit(0);
  break;
@@ -81,7 +81,7 @@ setlocale(LC_ALL, ""); // ajuste do idioma
 void insere(){
  int val;
  LIMPA_TELA;
- printf("\nInserção: \n");
+ printf("\nInsercao: \n");
  printf("--------------------------------------\n");
  printf("Insira o valor a ser inserido: ");
  scanf("%d",&val);
@@ -104,7 +104,7 @@ void insere(){
 //Exclusão
 void exclui(){
  Dados *auxiliar;
- printf("\nExclusão: \n");
+ printf("\nExclusao: \n");
  printf("--------------------------------------\n");
  //o auxiliar será o próximo da principal
  auxiliar=principal->proximo;
@@ -126,17 +126,17 @@ void mostra(){
  //laço de repetição para mostrar os valores
  for (; nova != NULL; nova = nova->proximo) {
  posicao++;
-  printf("Posição %d, contém o valor %d\n", posicao, nova->valor);
+  printf("Posicao %d, contem o valor %d\n", posicao, nova->valor);
  }
- printf(“--------------------------------------”);
+ printf("--------------------------------------");
  getchar();
 }
 //Mostrando erro de digitação
 void mostra_erro(){
  LIMPA_TELA;
- printf("\nErro de Digitação: \n");
+ printf("\nErro de Digitacao: \n");
  printf("--------------------------------------\n");
- printf("\nDigite uma opção válida (pressione -Enter- p/ continuar)!\n\n");
+ printf("\nDigite uma opcao valida (pressione -Enter- p/ continuar)!\n\n");
  printf("--------------------------------------");
  getchar();
 }
